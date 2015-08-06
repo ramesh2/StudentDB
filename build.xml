@@ -1,0 +1,25 @@
+<project>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="StudentDB" destdir="build/classes"/>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="d://build/jar"/>
+        <jar destfile="d://build/jar/studentdb.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="StudRec"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="d://build/jar/studentdb.jar" fork="true"/>
+    </target>
+
+</project>
